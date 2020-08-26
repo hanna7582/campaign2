@@ -1,32 +1,52 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <transition :name="transitionName">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      transitionName: '',
+    }
+  },
+  watch: {
+    // depth별 transition https://router.vuejs.org/guide/advanced/transitions.html#per-route-transition
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length;
+      const fromDepth = from.path.split('/').length;
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : ''
+    }
+  },
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  body{
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  .slide-right-enter-active,
+  .slide-left-enter-active  {
+    transition: all .3s ease;
+  }
+  .slide-right-leave-active{
+    transition: all .5s ease-out;
+  }
+  .slide-left-leave-active {
+    transition: all .5s ease;
+  }
+  .slide-right-enter, .slide-right-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .slide-left-enter, .slide-left-leave-to{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 </style>

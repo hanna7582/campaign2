@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import '_variables.scss';
+@import '_mixins.scss';
+@import 'fonts.scss';
+@import 'reset.scss';
+
+.content{
+  &-header{
+    position: relative;
+    padding: 20px 5px 5px;
+    h2{
+      font-family: NotoSans;
+      font-size:18px;
+      font-weight: 400;
+      letter-spacing: -0.1em;
+    }
+    .btn-mission{
+      @include position($bottom:5px, $right:0);
+      width: 118px;
+      height: 30px;
+      background: #fdf0a1;
+      border: solid 1px #e6cf45;
+      border-radius: 15px;
+      letter-spacing: -0.1em;
+      font-weight: 700;
+      text-indent: 15px;
+      &::before{
+        content:'';
+        @include position($xy:'y', $left:10px);
+        width: 12px;
+        height: 20px;
+        margin-right:3px;
+        background:url(~@/assets/img/reward_icon.png);
+        background-size: 12px;
+      }
+    }
+  }
+  &-body{
+    border: solid 1px #eeeeee;
+    border-radius: 5px;
+    background: $white;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+

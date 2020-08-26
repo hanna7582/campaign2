@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+*{ padding: 0;  margin: 0; box-sizing: border-box;}
+body{font-family: NanumGothic,"나눔고딕", Malgun Gothic, "돋움", Dotum, AppleGothic, sans-serif; color: #333; letter-spacing: -0.05em;}
+a{color:#727779; text-decoration:none}
+em{font-style:normal}
+ul, ol, li{list-style:none }
+fieldset{border: none}
+img{border:none;vertical-align:top;}
+table{width: 100%; border-spacing:0; border-collapse:collapse; border:0;}
+caption, legend{display:none}
+input,select,button,select{vertical-align:middle; border:0; outline:0;}
+button {background:transparent; cursor:pointer}
+
+.clearFix{content: ''; display: block; clear: both;}
+.row::after {content: '';display: block;clear: both;overflow: hidden;}
+.blind{position:absolute;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;width:1px;height:1px;}
