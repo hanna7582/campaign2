@@ -23,19 +23,19 @@
             <div>
               <div class="badge-wrap">
                 <div class="medal"></div>
-                <img :src="'/assets/img/badge/badge_sincerity'+((grpCnt[0])/2)+'.png'" class="badge">
+                <img :src="'/assets/img/badge/badge_sincerity'+(parseInt((grpCnt[0])/2))+'.png'" class="badge">
               </div>
             </div>
             <div>
               <div class="badge-wrap">
                 <div class="medal"></div>
-                <img :src="'/assets/img/badge/badge_concentration'+((grpCnt[1])/2)+'.png'" class="badge">
+                <img :src="'/assets/img/badge/badge_concentration'+(parseInt((grpCnt[1])/2))+'.png'" class="badge">
               </div>
             </div>
             <div>
               <div class="badge-wrap">
                 <div class="medal"></div>
-                <img :src="'/assets/img/badge/badge_challenge'+((grpCnt[2])/2)+'.png'" class="badge">
+                <img :src="'/assets/img/badge/badge_challenge'+(parseInt((grpCnt[2])/2))+'.png'" class="badge">
               </div>
             </div>
           </flicking>
